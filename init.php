@@ -1,6 +1,8 @@
 <?php
 
-Route::set('log', 'log(/<day>)', array('day' => '[0-9]+\-[0-9]+\-[0-9]+'))
+Route::set('log', 'log(/<date>)', array(
+		'date' => '\d{4}/\d{2}/\d{2}',
+	))
 	->defaults(array(
 		'controller' => 'log',
 		'action' => 'view',
