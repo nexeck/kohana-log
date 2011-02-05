@@ -12,8 +12,8 @@ class Controller_Log extends Controller
 			));
 		}
 		$logs = Log_Parser::parse_file($log_file);
-		$this->request->response = View::factory('log_view')
-			->set('logs', $logs)
-			;
+		$view = View::factory('log_view')
+			->set('logs', $logs);
+		$this->response->body($view);
 	}
 }
